@@ -1,0 +1,11 @@
+
+django-fsm==2.6.0
+django-gm2m==0.6.1
+django-guardian==1.4.8
+django-import-export==1.0.0
+django-ipware==2.1.0
+django-js-asset==1.1.0
+django-model-utils==3.1.2
+django-modelcluster==3.1
+django-mptt==0.9.0
+django-parler==1.8

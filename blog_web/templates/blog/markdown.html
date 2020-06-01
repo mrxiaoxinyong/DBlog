@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/editormd/css/editormd.css" />
+</head>
+<body>
+<div id="article-editor">
+    <textarea style="display:none;">### 关于 Editor.md
+
+**Editor.md** 是一款开源的、可嵌入的 Markdown 在线编辑器（组件），基于 CodeMirror、jQuery 和 Marked 构建。
+    </textarea>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="/static/editormd/editormd.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var editor = editormd("article-editor", {
+            emoji: true,
+            path   : "/static/editormd/lib/"
+        });
+        editor.fullscreen();
+    });
+</script>
+</html>

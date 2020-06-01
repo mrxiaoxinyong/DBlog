@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>技术分享社区博客系统注册</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="/static/assets_form/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/assets_form/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/static/assets_form/css/form-elements.css">
+        <link rel="stylesheet" href="/static/assets_form/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="/static/assets_form/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/assets_form/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/assets_form/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/assets_form/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="/static/assets_form/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content">
+
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>登录</strong></h1>
+                            <div class="description">
+                            	<p>
+	                            	感谢你的加入，希望大家一起努力，在<a href="#" style="color: blue"><strong>本站</strong></a>学习更多的技术和交流自己的心声，记录自己的故事!
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>欢迎登录本站</h3>
+                            		<p>输入以下相关信息登录</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-lock"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom" action="/register/" method="post">
+			                    <form role="form" action="" method="post" class="login-form">
+                                    {% csrf_token %}
+
+			                    	<div class="form-group">
+
+			                    		<label class="sr-only" for="form-username">{{ form.username.label }}</label>
+
+                                        {{ form.username }} <span style="color: red">{{ form.username.errors.0 }}</span>
+			                        </div>
+			                        <div class="form-group">
+
+			                        	<label class="sr-only" for="form-password">{{ form.password.label }}</label>
+                                        {{ form.password }}<span style="color: red">{{ form.password.errors.0 }}</span>
+			                        </div>
+                                    <span style="color: red">
+                                       {{ form.non_field_errors.0 }}
+                                    </span>
+			                        <button type="submit" class="btn">登录</button>
+			                    </form>
+                                <span>沒有账号？<a href="{% url 'register' %}">去注册</a></span>
+		                    </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                        	<h3>...或其他登录方式:</h3>
+                        	<div class="social-login-buttons">
+	                        	<a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-facebook"></i> QQ
+	                        	</a>
+	                        	<a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-twitter"></i> 微信
+	                        	</a>
+	                        	<a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-google-plus"></i> github
+	                        	</a>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="/static/assets_form/js/jquery-1.11.1.min.js"></script>
+        <script src="/static/assets_form/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/static/assets_form/js/jquery.backstretch.min.js"></script>
+        <script src="/static/assets_form/js/scripts.js"></script>
+
+        <!--[if lt IE 10]>
+            <script src="/static/assets_form/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>

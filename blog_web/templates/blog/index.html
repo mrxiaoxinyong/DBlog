@@ -1,0 +1,184 @@
+{% extends "home.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block start %}
+    {{ block.super }}
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="iTunesArtwork@2x.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+    <link type="text/css" rel="stylesheet" href="/static/blog/css/core.css">
+    <link type="text/css" rel="stylesheet" href="/static/blog/css/icon.css">
+    <link type="text/css" rel="stylesheet" href="/static/blog/css/home.css">
+    {% endblock %}
+
+</head>
+<body>
+
+
+{% block content %}
+<!-- content YDC begin -->
+<section>
+    <div class="ydc-content-slide ydc-body">
+        <div class="ydc-flex">
+            <!-- left begin -->
+
+            {% include 'blog/left.html' %}
+            <!-- left end -->
+            <!-- right begin -->
+            <div class="ydc-column ydc-column-8">
+                <div class="ydc-release-content">
+                    <div class="ydc-tabPanel ydc-tabPanel-release">
+                        <div class="ydc-release-tab-head">
+                            <ul>
+                                <li class="hit">内容管理</li>
+                            </ul>
+                            <div class="ydc-release-amount">
+                                        <span>
+                                            今日发布数量：<em>0</em>
+                                            /6 <a href="standard.html" target="_blank">发文规范</a>
+                                        </span>
+                            </div>
+                        </div>
+                        <div class="ydc-panes">
+                            <div class="ydc-pane" style="display:block;">
+                                <div class="clearfix">
+                                    <div class="fl ydc-group-sel">
+                                        <select>
+                                            <option>全部类型</option>
+                                            <option>文章</option>
+                                            <option>图集</option>
+                                            <option>视频</option>
+                                        </select>
+                                    </div>
+                                    <div class="fl ydc-group-sel">
+                                        <select>
+                                            <option>全部状态</option>
+                                            <option>草稿</option>
+                                            <option>未通过</option>
+                                            <option>已发布</option>
+                                            <option>已下线</option>
+                                            <option>待发布</option>
+                                        </select>
+                                    </div>
+                                    <div class="fl ydc-group-input">
+                                        <input type="text" placeholder="请输入关键词进行搜索">
+                                        <button class="ydc-group-button">搜 索</button>
+                                    </div>
+                                </div>
+                                <div class="ydc-group-altogether">共<span>9</span>条内容</div>
+                                <div class="ydc-group-table">
+                                    {% for article in articles %}
+                                    <article class="excerpt excerpt-1"><a class="focus" href="#"
+                                                                          title="用DTcms做一个独立博客网站（响应式模板）" target="_blank"
+                                                                          draggable="false"><img class="thumb"
+                                                                                                 data-original="images/201610181739277776.jpg"
+                                                                                                 src="{{ article.image_url}}"
+                                                                                                 alt="用DTcms做一个独立博客网站（响应式模板）"
+                                                                                                 style="display: inline;"
+                                                                                                 draggable="false"></a>
+                                        <header><a class="cat" href="#" title="MZ-NetBlog主题" draggable="false">MZ-NetBlog主题<i></i></a>
+                                            <h2><a href="#" title="用DTcms做一个独立博客网站（响应式模板）" target="_blank"
+                                                   draggable="false">{{article.title}}</a></h2>
+                                        </header>
+                                        <p class="meta">
+                                            <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-10-14
+                                            </time>
+                                            <span class="views"><i class="glyphicon glyphicon-eye-open"></i> 217</span>
+                                            <a class="comment" href="##comment" title="评论" target="_blank"
+                                               draggable="false"><i class="glyphicon glyphicon-comment"></i> 4</a></p>
+                                        <p class="note">{{ article.content|truncatechars_html:30 | striptags }}</p>
+                                    </article>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="ydc-pagination">
+                                <ol>
+                                    <li class="ydc-previous-item">
+                                        <button class="ydc-previous-item-btn-medium ydc-disabled">
+                                            <span>上一页</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="ydc-previous-item-btn-medium cur">1</button>
+                                    </li>
+                                    <li>
+                                        <button class="ydc-previous-item-btn-medium">2</button>
+                                    </li>
+                                    <li>
+                                        <button class="ydc-previous-item-btn-medium">3</button>
+                                    </li>
+                                    <li class="ydc-previous-item">
+                                        <button class="ydc-previous-item-btn-medium">
+                                            <span>下一页</span>
+                                        </button>
+                                    </li>
+                                    <li class="ydc-item-quick">
+                                        第
+                                        <div class="ydc-item-quick-kun"><input type="number" aria-invalid="false"
+                                                                               class=""></div>
+                                        页
+                                        <button style="margin-left:5px;" class="ydc-previous-item-btn-medium">
+                                            <span>跳转</span>
+                                        </button>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="ydc-right-banner">
+                                <div class="slideshow-container">
+                                    <a href="https://xihazahuopu.taobao.com/" target="_blank" class="mySlides fade">
+                                        <img src="/static/blog/images/ad/ad1.jpg" style="width:100%">
+                                    </a>
+                                    <a href="https://weibo.com/525135676" target="_blank" class="mySlides fade">
+                                        <img src="/static/blog/images/ad/ad2.jpg" style="width:100%">
+                                    </a>
+                                    <a href="http://www.a-ui.cn/" target="_blank" class="mySlides fade">
+                                        <img src="/static/blog/images/ad/ad3.jpg" style="width:100%">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- right end -->
+        </div>
+    </div>
+</section>
+<!-- content YDC end -->
+{% endblock %}
+{% block end %}
+<script type="text/javascript" src="/static/blog/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $("#manage_1").addClass("active");
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // 滚动时间
+    }
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.ydc-tabPanel ul li').click(function () {
+            $(this).addClass('hit').siblings().removeClass('hit');
+            $('.ydc-panes>div:eq(' + $(this).index() + ')').show().siblings().hide();
+        })
+
+    })
+
+</script>
+{% endblock %}
+</body>
+</html>

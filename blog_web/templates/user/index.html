@@ -1,0 +1,369 @@
+{% extends "home.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block start %}
+        <title>Home</title>
+        <!-- for-mobile-apps -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="keywords" content="Great Taste Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+        <script type="application/x-javascript"> addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
+    <!-- //for-mobile-apps -->
+    <link href="/static/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/static/user/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- //js -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css'>
+    {% endblock %}
+</head>
+<body class="user-select" onload='
+     document.getElementById("x_login").href = "/login/?next="+ window.location.pathname;
+     document.getElementById("x_register").href = "/register/?next="+ window.location.pathname;
+'>
+
+<!-- banner-body -->
+{% block content %}
+<header style="
+    background: url(/static/images/bg-title.png?v4) no-repeat center;
+    background-size: 1920px auto;
+    height: 100px;
+    /* background: blue; */
+">
+    <div class="container d-flex clearfix"
+         style="/* width: 1318px !important; *//* vertical-align: middle; */padding: 0;margin: 0 auto;-webkit-box-sizing: border-box;box-sizing: border-box;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;height: 100%;background-image:;">
+        <div class="title-box" style="
+    position: absolute;
+    /* margin-top: 20px; */
+    padding-top: 30px;
+    overflow: hidden;
+    word-wrap: break-word;
+    max-width: 718px;
+">
+            <h1 class="title-blog" style="
+    font-size: 24px;
+">
+                <a href="https://blog.csdn.net/weixin_40701006">{{ username }}的博客</a>
+            </h1>
+            <p class="description "></p>
+        </div>
+        <div class="opt-box d-flex justify-content-end" style="
+    height: 100%;
+    margin-left: auto;
+    width: 233px;
+    position: relative;
+">
+            <a class="btn btn-sm" href="https://mp.csdn.net/console/article">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#csdnc-cog"></use>
+                </svg>
+                管理博客</a>
+            <a class="btn btn-sm" href="javascript:;" id="skinChange">
+                <svg t="1567068286034" class="icon" viewBox="0 0 1280 1024" version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="19299" width="12" height="12">
+                    <path d="M890.368 112.042667l181.674667 181.930666-101.461334 102.741334a69.717333 69.717333 0 0 0-48.128-18.005334 72.704 72.704 0 0 0-72.96 73.898667V832.853333a71.850667 71.850667 0 0 1-71.253333 72.106667H422.058667a71.850667 71.850667 0 0 1-71.253334-72.106667V452.693333a72.704 72.704 0 0 0-72.96-73.898666 75.52 75.52 0 0 0-48.042666 18.090666l-101.546667-102.912 179.882667-182.016h44.544l1.706666 1.792c49.92 75.776 144.298667 124.416 245.76 124.416 101.461333 0 195.84-46.848 245.76-124.330666 0-1.706667 1.706667-1.706667 1.706667-1.706667h42.837333V39.850667v72.106666zM328.874667 0.597333h-43.349334c-27.477333 0-47.189333 7.850667-60.928 23.637334L24.064 222.72c-31.488 31.488-31.488 80.64 0 110.08l116.053333 116.053333c13.653333 13.482667 31.914667 21.162667 51.029334 21.589334a74.922667 74.922667 0 0 0 51.2-21.589334h1.962666c1.962667 0 1.962667 0 1.962667 1.962667v414.805333c0 86.528 70.826667 157.354667 157.269333 157.354667h393.216c86.528 0 157.354667-70.826667 157.354667-157.354667V450.901333c0-1.962667 0-1.962667 1.962667-1.962666h1.962666c13.653333 13.482667 31.914667 21.162667 51.114667 21.589333 19.626667 0 37.290667-7.850667 51.114667-21.589333l116.053333-116.053334c31.402667-31.402667 31.402667-80.554667 0-110.08L977.578667 24.234667a78.762667 78.762667 0 0 0-57.002667-23.637334h-49.152c-27.562667 0-51.2 13.738667-66.901333 37.376-41.301333 60.928-117.930667 100.266667-206.421334 100.266667-88.490667 0-165.12-41.301333-206.506666-100.266667a70.485333 70.485333 0 0 0-62.890667-37.376z"
+                          fill="" p-id="19300"></path>
+                </svg>
+                换皮肤啦</a>
+        </div>
+
+    </div>
+</header>
+
+
+    <div class="container" style="width: 76%;">
+        <div class="banner-body-content">
+            <div class="col-xs-3 banner-body-left">
+                <div id="asideProfile" class="aside-box" style="margin-bottom: 8px;background-color: #fff;-webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);">
+                    <!-- <h3 class="aside-title">个人资料</h3> -->
+                    <div class="profile-intro d-flex" style="padding: 16px 16px 8px 16px;padding-bottom: 12px;">
+                        <div class="avatar-box d-flex justify-content-center flex-column" style="position: relative;width: 48px;height: 21px;-ms-flex-negative: 0;flex-shrink: 0;">
+                            <a href="/user/index/" data-report-click="{&quot;mod&quot;:&quot;popu_379&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/weixin_40701006&quot;}">
+                                <img src="/static/user/images/4.jpg" class="avatar_pic" username="weixin_40701006" style="width: 74px;height: 68px;">
+
+                            </a>
+                        </div>
+                        <div class="user-info d-flex flex-column profile-intro-name-box" style="margin-left: 80px;/* width: 155px; */position: relative;">
+                            <div>
+                                <span class="name csdn-tracking-statistics tracking-click " data-report-click="{&quot;mod&quot;:&quot;popu_379&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/weixin_40701006&quot;}" username="{{ username }}">
+                    <a href="https://blog.csdn.net/weixin_40701006" class="" id="uid" title="weixin_40701006"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    {{ username }}                    </font></font></a>
+                </span>
+                            </div>
+                            <div class="profile-intro-name-boxFooter">
+                                <span class="personal-home-page"><a target="_blank" href="https://me.csdn.net/weixin_40701006"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TA的个人主页&gt;</font></font></a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-info d-flex item-tiling" style="display: flex !important;padding: 6px 10px;">
+                        <dl class="text-center" title="0" style="padding: 13px;margin: 0;text-align: center;">
+                            <dt>原创</dt>
+                            <dd><span class="count"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0</font></font></span></dd>
+                        </dl>
+                        <dl class="text-center" id="fanBox" title="0" style="padding: 13px;margin: 0;text-align: center;">
+                            <dt>粉丝</font>
+                            </dt>
+                            <dd><span class="count" id="fan"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0</font></font></span></dd>
+                        </dl>
+                        <dl class="text-center" title="0" style="padding: 13px;margin: 0;text-align: center;">
+                            <dt>获赞</font>
+                            </dt>
+                            <dd><span class="count"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0</font></font></span></dd>
+                        </dl>
+                        <dl class="text-center" title="0" style="padding: 13px;margin: 0;text-align: center;">
+                            <dt>评论</font>
+                            </dt>
+                            <dd><span class="count"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0</font></font></span></dd>
+                        </dl>
+                        <dl class="text-center" title="2" style="padding: 13px;margin: 0;text-align: center;">
+                            <dt>访问</font>
+                            </dt>
+                            <dd><span class="count"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2</font></font></span></dd>
+                        </dl>
+                    </div>
+
+
+                </div>
+
+                <div class="top-nav">
+                    <nav class="navbar navbar-default">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                    data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                            <nav class="stroke">
+                                <ul class="nav navbar-nav-bottom">
+                                    <li class="active"><a href="index.html"><i class="home"></i>Home</a></li>
+                                    <li><a href="photos.html" class="hvr-underline-from-left"><i class="picture1"></i>Photos</a>
+                                    </li>
+                                    <li><a href="blog.html" class="hvr-underline-from-left"><i
+                                            class="edit1"></i>Blog</a></li>
+                                    <li><a href="short-codes.html" class="hvr-underline-from-left"><i
+                                            class="text-size1"></i>Short Codes</a></li>
+                                    <li><a href="mail.html" class="hvr-underline-from-left"><i class="envelope1"></i>Mail
+                                        US</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </nav>
+                </div>
+            </div>
+            <div class="col-xs-9 banner-body-right">
+                <div class="wmuSlider example1">
+                    <div class="wmuSliderWrapper">
+                        <article style="position: absolute; width: 100%; opacity: 0;">
+                            <div class="banner-wrap">
+                                <div class="banner">
+                                </div>
+                            </div>
+                        </article>
+                        <article style="position: absolute; width: 100%; opacity: 0;">
+                            <div class="banner-wrap">
+                                <div class="banner1">
+                                </div>
+                            </div>
+                        </article>
+                        <article style="position: absolute; width: 100%; opacity: 0;">
+                            <div class="banner-wrap">
+                                <div class="banner2">
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <script src="/static/user/js/jquery.wmuSlider.js"></script>
+                <script>
+                    $('.example1').wmuSlider();
+                </script>
+                <div class="banner-bottom">
+                    <div class="col-md-4 banner-left">
+                        <div class="col-xs-3 banner-left1">
+                            <div class="banner-left11">
+                                <span> </span>
+                            </div>
+                        </div>
+                        <div class="col-xs-9 banner-right1">
+                            <h3>cupidatat proi</h3>
+                        </div>
+                        <div class="clearfix"></div>
+                        <p>Excepteur sint occaecat cupidatat non proident,
+                            sunt in culpa qui.</p>
+                    </div>
+                    <div class="col-md-4 banner-left">
+                        <div class="col-xs-3 banner-left1">
+                            <div class="banner-left22">
+                                <span> </span>
+                            </div>
+                        </div>
+                        <div class="col-xs-9 banner-right1">
+                            <h3>sint occaecat</h3>
+                        </div>
+                        <div class="clearfix"></div>
+                        <p>Excepteur sint occaecat cupidatat non proident,
+                            sunt in culpa qui.</p>
+                    </div>
+                    <div class="col-md-4 banner-left">
+                        <div class="col-xs-3 banner-left1">
+                            <div class="banner-left33">
+                                <span> </span>
+                            </div>
+                        </div>
+                        <div class="col-xs-9 banner-right1">
+                            <h3>cupida quisu</h3>
+                        </div>
+                        <div class="clearfix"></div>
+                        <p>Excepteur sint occaecat cupidatat non proident,
+                            sunt in culpa qui.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="copyrights">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
+            <div class="clearfix"></div>
+            <div class="col-xs-3 banner-body-left">
+                <div class="latest-news">
+                    <h2>Latest News</h2>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                       aria-expanded="true" aria-controls="collapseOne">
+                                        Michael Vol
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Andrew Rich
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Rita Rock
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="join">
+                        <a href="single.html">Learn More</a>
+                    </div>
+                    <h3>Benefits</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                        laudantium.</p>
+                </div>
+            </div>
+            <div class="col-xs-9 banner-body-right">
+                <div class="msg-text">
+                    <div class="col-xs-2 msg-text-left">
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-xs-10 msg-text-right">
+                        <p>But I must explain to you how all this mistaken idea of
+                            denouncing pleasure and praising pain was born and I will give
+                            you a complete account of the system.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="msg-text-bottom">
+                    <div class="col-md-4 msg-text-bottom-left">
+                        <figure class="effect-winston">
+                            <a href="single.html"><img src="/static/user/images/4.jpg" alt=" " class="img-responsive"/>
+                                <figcaption>
+
+                                </figcaption>
+                            </a>
+                        </figure>
+
+                        <h3><a href="single.html">vel illum qui dolorem</a></h3>
+                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                            consectetur, adipisci velit, sed quia.</p>
+                    </div>
+                    <div class="col-md-4 msg-text-bottom-left">
+                        <figure class="effect-winston">
+                            <a href="single.html"><img src="/static/user/images/5.jpg" alt=" " class="img-responsive"/>
+                                <figcaption>
+
+                                </figcaption>
+                            </a>
+                        </figure>
+                        <h3><a href="single.html">quia dolor sit amet</a></h3>
+                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                            consectetur, adipisci velit, sed quia.</p>
+                    </div>
+                    <div class="col-md-4 msg-text-bottom-left">
+                        <figure class="effect-winston">
+                            <a href="single.html"><img src="/static/user/images/6.jpg" alt=" " class="img-responsive"/>
+                                <figcaption>
+
+                                </figcaption>
+                            </a>
+                        </figure>
+                        <h3><a href="single.html">porro quisquam est</a></h3>
+                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                            consectetur, adipisci velit, sed quia.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block end %}
+<!-- //banner-body -->
+<!-- for bootstrap working -->
+
+<script src="/static/user/js/bootstrap.js"></script>
+{% endblock %}
+</body>
+</html>

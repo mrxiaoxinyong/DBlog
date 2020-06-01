@@ -1,0 +1,182 @@
+{% extends "blog/index.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    {% block start %}
+    {{ block.super }}
+
+    {% endblock %}
+
+</head>
+<body>
+
+{% block content %}
+<!-- content YDC begin -->
+<section>
+    <div class="ydc-content-slide ydc-body">
+        <div class="ydc-flex">
+            <!-- left begin -->
+            {% include 'blog/left.html' %}
+            <!-- left end -->
+            <!-- right begin -->
+            <div class="ydc-column ydc-column-8">
+                <div class="ydc-release-content">
+                    <form class="layui-form" action="#" onsubmit="return false;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">标题</label>
+                            <div class="layui-input-block">
+                                {{ form.name }} <span style="color: red">{{ form.username.errors.0 }}</span>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">描述</label>
+                            <div class="layui-input-block">
+                                {{ form.describe }} <span style="color: red">{{ form.describe.errors.0 }}</span>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">分类配图</label>
+                            <div class="layui-input-block">
+                                <!-- 原生上传控件 -->
+                                {{ form.image }} <span style="color: red">{{ form.image.errors.0 }}</span>
+                                <!-- 自定义上传按钮 -->
+                                <img id="showImg" src="/static/blog/images/icon/noimg.gif"
+                                     style="width: 200px;height: 150px;">
+                                <button type="file" id="putImg" class="btnStyle" style="color: white;
+                                            margin-top: 4px;
+                                            border: antiquewhite;
+                                            width: 92px;
+                                            display: block;
+                                            background: #337ab7;
+                                            height: 30px;">立即上传
+                                </button>
+                            </div>
+                        </div>
+                        <!--<div class="layui-form-item layui-form-text">
+                          <label class="layui-form-label">编辑器</label>
+                          <div class="layui-input-block">
+                            <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
+                          </div>
+                        </div>-->
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1" id="catalog_submit">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- right end -->
+        </div>
+    </div>
+</section>
+
+<!-- content YDC end -->
+{% endblock %}
+{% block end %}
+<script type="text/javascript" src="/static/blog/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $("#manage_2").addClass("active");
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // 滚动时间
+    }
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.ydc-tabPanel ul li').click(function () {
+            $(this).addClass('hit').siblings().removeClass('hit');
+            $('.ydc-panes>div:eq(' + $(this).index() + ')').show().siblings().hide();
+        })
+    })
+</script>
+## layer.open({
+##     type: 1,
+##     anim: 2,
+##     offset: '100px',
+##     skin: 'layui-layer-rim', //加上边框
+##     area: ['600px', '600px'], //宽高
+##     content: '<form class="layui-form" action="#" onsubmit="return false;"><div class="layui-form-item"><label class="layui-form-label">标题</label><div class="layui-input-block"><input type="text" name="name" id="id_name" required="" placeholder="标题..." class="layui-input"><span style="color: red"></span></div></div><div class="layui-form-item layui-form-text"><label class="layui-form-label">描述</label><div class="layui-input-block"><textarea name="describe" id="id_describe" rows="10" cols="40" placeholder="描述..." class="layui-textarea"></textarea><span style="color: red"></span></div></div><div class="layui-form-item"><label class="layui-form-label">分类配图</label><div class="layui-input-block"><input type="file" name="image" id="chooseImage" class="hidden" accept=".jpg,.jpeg,.png"><span style="color: red"></span><img id="showImg" src="/static/blog/images/icon/noimg.gif" style="width: 200px;height: 150px;" draggable="false"><button type="file" id="putImg" class="btnStyle" style="color: white;                                            margin-top: 4px;                                            border: antiquewhite;                                            width: 92px;                                            display: block;                                            background: #337ab7;                                            height: 30px;">立即上传</button></div></div><div class="layui-form-item"><div class="layui-input-block"><button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1" id="catalog_submit">立即提交</button><button type="reset" class="layui-btn layui-btn-primary">重置</button></div></div></form>'
+## });
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    $(document).on("click", "#catalog_submit",function (){
+
+        image = $("#showImg").attr("src");
+        $.ajax({
+                type: "POST",
+                url: "/blog/catalog/edit",
+                data: {
+                            "image": $("#showImg").attr("src"),
+                            "name":  $('#id_name').val(),
+                            "describe": $('#id_describe').val(),
+                        },
+                beforeSend: function(xhr, settings){
+                        xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+                },
+                dataType: "JSON",
+                success: function(result, status) {
+                    console.log(status);
+                    console.log(result)
+                    layer.alert("发送成功")
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    layer.open({
+                      title: '提交失败',
+                      anim: 2,
+                      offset: 't',
+                      time: 3000,
+                      content: jqXHR.responseText
+                    });
+                }
+
+        });
+    })
+</script>
+<script>
+    //自定义上传按钮的点击事件
+    $('#putImg').click(function () {
+        $('#chooseImage').trigger('click');//触发原生上传控件
+    });
+
+    $('#chooseImage').on('change', function (e) {
+        // 检查是否是图片
+        var filePath = $(this).val(),
+                fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase();//获取文件后缀名
+        //检查后缀名
+        if (!fileFormat.match(/.png|.jpg|.jpeg/)) {
+            showError('文件格式必须为：png/jpg/jpeg');//showError是另外写的一个显示错误信息的function
+            return;
+        }
+
+        //获取并记录图片的base64编码
+        var reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]); // 读出 base64
+        reader.onloadend = function () {
+            // 图片的 base64 格式, 可以直接当成 img 的 src 属性值
+            var dataURL = reader.result;//base64
+            // 显示图片
+            $('#showImg').attr('src', dataURL);
+        };
+    });
+</script>
+{% endblock %}
+</body>
+</html>
